@@ -33,6 +33,7 @@ class CoapTracer(smqdInstance: Smqd) extends MessageInterceptor with StrictLoggi
     val message = msg match {
       case req: Request => (s"Req ${req.getType}-${req.getCode}", s"MID=${req.getMID}, Token=${req.getTokenString}, OptionSet=${req.getOptions}, ${req.getPayloadString}")
       case rsp: Response => (s"Rsp ${rsp.getType}-${rsp.getCode}", s"MID=${rsp.getMID}, Token=${rsp.getTokenString}, OptionSet=${rsp.getOptions}, ${rsp.getPayloadString}")
+      case emp: EmptyMessage => (s"${emp.getType} ${emp.getMID}", emp.toString)
       case _ => (s"Msg ${msg.getType} ${msg.getRawCode}", msg.toString)
     }
 
