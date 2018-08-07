@@ -4,7 +4,7 @@ import java.util
 
 import com.thing2x.smqd.Smqd
 import com.thing2x.smqd.plugin.Service
-import com.typesafe.config.{Config, ConfigRenderOptions}
+import com.typesafe.config.Config
 import com.typesafe.scalalogging.StrictLogging
 import org.eclipse.californium.core.CoapResource
 import org.eclipse.californium.core.coap.CoAP.ResponseCode
@@ -17,7 +17,7 @@ import scala.collection.JavaConverters._
 // 2018. 7. 16. - Created by Kwon, Yeong Eon
 
 /**
-  *
+  * General CoAP service plugin
   */
 class CoapService(name: String, smqdInstance: Smqd, config: Config) extends Service(name, smqdInstance, config) with StrictLogging {
 

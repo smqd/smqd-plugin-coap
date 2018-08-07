@@ -183,7 +183,7 @@ class CoapGatewayService(name: String, smqdInstance: Smqd, config: Config) exten
       clientId.id match {
         case clientIdentifierFormat(_*) => // valid clientId
           // check username and password
-          smqdInstance.authenticate(clientId, username, password) flatMap {
+          smqdInstance.clientLogin(clientId, username, password) flatMap {
             case SmqSuccess => Future(ResponseCode.VALID) // authentication success
             case _ => Future(ResponseCode.UNAUTHORIZED) // authentication failed
           }

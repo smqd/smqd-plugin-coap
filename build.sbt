@@ -1,13 +1,13 @@
 import sbt.Keys._
 
-val smqdVersion = "0.4.0-SNAPSHOT"
+val smqdVersion = "0.4.1-SNAPSHOT"
 
 val californiumVersion = "2.0.0-M10"
 
 val `smqd-plugin-coap` = project.in(file(".")).settings(
   scalaVersion := "2.12.6",
   organization := "com.thing2x",
-  name := "smqd-coap",
+  name := "smqd-plugin-coap",
   version := "0.1.0-SNAPSHOT"
 ).settings(
   libraryDependencies ++= Seq(
